@@ -5,7 +5,7 @@ import Icons from "./Icons";
 import { buttonVariants } from "./ui/button";
 
 const Navbar = () => {
-  const user = ;
+  const user = true;
 
   return (
     <div className="bg-white sticky z-50 top-0 inset-x-0 h-16">
