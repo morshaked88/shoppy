@@ -1,11 +1,14 @@
 import React from "react";
-import { MaxWidthWrapper, NavItems, Cart } from "@/components";
+import { MaxWidthWrapper, NavItems, Cart, UserAccountNav } from "@/components";
 import Link from "next/link";
 import Icons from "./Icons";
 import { buttonVariants } from "./ui/button";
+import { getServerSideUser } from "@/lib/payload-utils";
+import { cookies } from "next/headers";
 
-const Navbar = () => {
-  const user = false;
+const Navbar = async () => {
+  const nextCookies = cookies();
+  const { user } = await getServerSideUser(nextCookies);
 
   return (
     <div className="bg-white sticky z-50 top-0 inset-x-0 h-16">
@@ -39,7 +42,7 @@ const Navbar = () => {
                     ></span>
                   )}
                   {user ? (
-                    <p></p>
+                    <UserAccountNav user={user} />
                   ) : (
                     <Link
                       href={"/sign-up"}

@@ -57,6 +57,7 @@ const Page = () => {
       }
 
       router.push("/");
+      router.refresh();
     },
     onError: (error) => {
       if (error.data?.code === "UNAUTHORIZED") {
