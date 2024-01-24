@@ -4,4 +4,5 @@ export { default as NavItems } from "./navItems/NavItems";
 export { default as Cart } from "./Cart";
 export { default as VerifyEmail } from "./VerifyEmail";
 export { default as UserAccountNav } from "./UserAccountNav";
-export { default as ProductReel } from "./ProductReel";
+export { default as ProductReel } from "./product/ProductReel";
+export { default as ImageSlider } from "./ImageSlider";
