@@ -6,7 +6,7 @@ import ProductPlaceHolder from "./ProductPlaceHolder";
 import Link from "next/link";
 import { cn, formatPrice } from "@/lib/utils";
 import { PRODUCT_CATEGORIES } from "@/config";
-import { ImageSlider } from "@/components";
+import ImageSlider from "../ImageSlider";
 
 type IProductListingProps = {
   product: Product | null;
@@ -41,13 +41,13 @@ const ProductListing: FC<IProductListingProps> = ({ product, index }) => {
   if (isVisable && product) {
     return (
       <Link
-        href={`/products/${product.id}`}
+        href={`/product/${product.id}`}
         className={cn("invisible h-full w-full cursor-pointer group/main", {
           "visible animate-in fade-in-5": isVisable,
         })}
       >
+        <ImageSlider urls={imageUrls} />
         <div className="flex flex-col w-full">
-          <ImageSlider urls={imageUrls} />
           <h3 className="mt-4 font-medium text-sm text-gray-700">
             {product.name}
           </h3>
