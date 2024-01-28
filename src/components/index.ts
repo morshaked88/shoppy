@@ -6,3 +6,5 @@ export { default as VerifyEmail } from "./VerifyEmail";
 export { default as UserAccountNav } from "./UserAccountNav";
 export { default as ProductReel } from "./product/ProductReel";
 export { default as ImageSlider } from "./ImageSlider";
+export { default as AddToCartButton } from "./AddToCartButton";
+export { default as CartItem } from "./CartItem";

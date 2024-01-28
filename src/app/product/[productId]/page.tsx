@@ -1,9 +1,9 @@
-import { MaxWidthWrapper } from "@/components";
+import { MaxWidthWrapper, ProductReel, AddToCartButton } from "@/components";
 import { PRODUCT_CATEGORIES } from "@/config";
 import { getPayloadClient } from "@/get-payload";
 import { formatPrice } from "@/lib/utils";
 import { Product } from "@/payload-types";
-import { Check } from "lucide-react";
+import { Check, Shield } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FC } from "react";
@@ -126,8 +126,34 @@ const Page: FC<IPageProps> = async ({ params }) => {
               <ImageSlider urls={imageUrls} />
             </div>
           </div>
+          {/*Add to cart*/}
+          <div className="mt-10 lg:col-start-1 lg:row-start-2 lg:max-w-lg lg:self-start">
+            <div className="">
+              <div className="mt-10">
+                <AddToCartButton product={product} />
+              </div>
+              <div className="my-6 text-center">
+                <div className="group inline-flex text-sm font-medium">
+                  <Shield
+                    aria-hidden="true"
+                    className="mr-2 h-5 w-5 flex-shrink-0 text-gray-400"
+                  />
+                  <span className="text-muted-foreground hover:text-gray-700">
+                    30 days Return Guarantee
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
+      <ProductReel
+        href="/products"
+        query={{ category: product.category, limit: 4 }}
+        title={`Similar ${label}`}
+        subtitle={`Browse similar high-quality ${label} just like '${product.name}'`}
+      />
     </MaxWidthWrapper>
   );
 };
