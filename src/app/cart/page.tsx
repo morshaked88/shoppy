@@ -23,7 +23,9 @@ const Page = () => {
         if (url) router.push(url);
       },
       onError: (error) => {
-        toast.error("Please login before checking out.");
+        error.message === "UNAUTHORIZED"
+          ? toast.error("Please login before checking out.")
+          : toast.error("Something went wrong. Please try again later.");
       },
     });
 
