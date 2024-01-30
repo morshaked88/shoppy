@@ -1,6 +1,6 @@
 import { CollectionConfig } from "payload/types";
 
- const Users: CollectionConfig = {
+const Users: CollectionConfig = {
   slug: "users",
   auth: {
     verify: {
@@ -16,6 +16,26 @@ import { CollectionConfig } from "payload/types";
     create: () => true,
   },
   fields: [
+    {
+      name: "products",
+      label: "Products",
+      admin: {
+        condition: () => false,
+      },
+      relationTo: "products",
+      hasMany: true,
+      type: "relationship",
+    },
+    {
+      name: "product_files",
+      label: "Product Files",
+      admin: {
+        condition: () => false,
+      },
+      relationTo: "product_files",
+      hasMany: true,
+      type: "relationship",
+    },
     {
       name: "role",
       defaultValue: "user",
