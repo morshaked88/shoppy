@@ -49,7 +49,7 @@ const Cart = () => {
           <SheetTitle>{`Cart(${itemsCount})`}</SheetTitle>
         </SheetHeader>
         {itemsCount > 0 ? (
-          <>
+          <div>
             <div className="flex w-full flex-col pr-6">
               {/* cart logic */}
               <ScrollArea>
@@ -87,7 +87,7 @@ const Cart = () => {
                 </SheetTrigger>
               </SheetFooter>
             </div>
-          </>
+          </div>
         ) : (
           <div className="flex h-full flex-col items-center justify-center space-y-1">
             <div
