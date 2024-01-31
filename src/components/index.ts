@@ -9,3 +9,5 @@ export { default as ImageSlider } from "./ImageSlider";
 export { default as AddToCartButton } from "./AddToCartButton";
 export { default as CartItem } from "./CartItem";
 export { default as PaymentStatus } from "./PaymentStatus";
+export { default as Footer } from "./Footer";
+export { default as MobileNav } from "./MobileNav";

@@ -1,9 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: [
-      { hostname: "localhost", port: "3000", protocol: "http", pathname: "**" },
-    ],
+    domains: ["localhost", "shoppy-production.up.railway.app"],
   },
 };
 
